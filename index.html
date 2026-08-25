@@ -44,7 +44,6 @@
             --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         *,
         *::before,
         *::after {
@@ -52,15 +51,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
             font-size: 16px;
         }
-
         body {
             font-family: var(--font-sans);
             background-color: var(--bg-primary);
@@ -69,19 +65,16 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-
         img,
         svg {
             display: block;
             max-width: 100%;
             height: auto;
         }
-
         a {
             color: inherit;
             text-decoration: none;
         }
-
         button {
             font-family: inherit;
             cursor: pointer;
@@ -89,18 +82,15 @@
             background: none;
             color: inherit;
         }
-
         ul,
         ol {
             list-style: none;
         }
-
         :focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 3px;
             border-radius: var(--radius-sm);
         }
-
         .skip-link {
             position: absolute;
             top: -100%;
@@ -117,12 +107,10 @@
         .skip-link:focus {
             top: 16px;
         }
-
         ::selection {
             background: var(--accent);
             color: #fff;
         }
-
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -137,21 +125,18 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #3A3A4E;
         }
-
         .container {
             width: 100%;
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 24px;
         }
-
         .section-padding {
             padding: 100px 0;
         }
         .section-padding-sm {
             padding: 70px 0;
         }
-
         .section-label {
             display: inline-block;
             font-size: 0.8rem;
@@ -161,7 +146,6 @@
             color: var(--accent);
             margin-bottom: 16px;
         }
-
         .section-heading {
             font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
@@ -170,14 +154,12 @@
             color: var(--text-primary);
             margin-bottom: 16px;
         }
-
         .section-subheading {
             font-size: 1.1rem;
             color: var(--text-secondary);
             max-width: 600px;
             line-height: 1.7;
         }
-
         .text-center {
             text-align: center;
         }
@@ -185,7 +167,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .btn {
             display: inline-flex;
             align-items: center;
@@ -441,15 +422,8 @@
             animation: pulse-dot 2s infinite;
         }
         @keyframes pulse-dot {
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.4;
-                transform: scale(1.5);
-            }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.5); }
         }
         .hero h1 {
             font-size: clamp(2.4rem, 5vw, 3.9rem);
@@ -521,15 +495,9 @@
             border-radius: 50%;
             background: #2A2A3C;
         }
-        .browser-dots span:nth-child(1) {
-            background: #FF5F57;
-        }
-        .browser-dots span:nth-child(2) {
-            background: #FEBC2E;
-        }
-        .browser-dots span:nth-child(3) {
-            background: #28C840;
-        }
+        .browser-dots span:nth-child(1) { background: #FF5F57; }
+        .browser-dots span:nth-child(2) { background: #FEBC2E; }
+        .browser-dots span:nth-child(3) { background: #28C840; }
         .browser-url {
             flex: 1;
             height: 28px;
@@ -561,9 +529,7 @@
             font-weight: 700;
             letter-spacing: -0.02em;
         }
-        .mini-logo span {
-            color: var(--accent);
-        }
+        .mini-logo span { color: var(--accent); }
         .mini-nav-links {
             display: flex;
             gap: 12px;
@@ -843,14 +809,14 @@
             font-weight: 600;
         }
 
-        /* ============ GALLERY ============ */
+        /* ============ GALLERY (NEW STACKED LAYOUT) ============ */
         .gallery {
             background: var(--bg-primary);
         }
         .project-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             margin-top: 48px;
         }
         .project-card {
@@ -864,12 +830,13 @@
         .project-card:hover {
             border-color: var(--border-hover);
             box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
         }
         .project-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 28px;
+            padding: 20px 24px;
             border-bottom: 1px solid var(--border);
             background: var(--bg-secondary);
         }
@@ -891,89 +858,51 @@
         .project-card:hover .project-view-hint {
             color: var(--accent);
         }
-        .project-main-image {
+        /* Stack container */
+        .project-stack {
             position: relative;
-            aspect-ratio: 16/9;
-            overflow: hidden;
-            border-bottom: 1px solid var(--border);
+            height: 320px;
             background: var(--bg-elevated);
+            overflow: hidden;
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
         }
-        .project-main-image .placeholder-img {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            color: var(--text-muted);
-            transition: transform 0.4s var(--ease-out);
-        }
-        .project-card:hover .project-main-image .placeholder-img {
-            transform: scale(1.02);
-        }
-        .project-thumbnails {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            padding: 20px 28px;
-        }
-        .project-thumb {
-            aspect-ratio: 16/10;
+        .project-stack img {
+            position: absolute;
             border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: var(--bg-elevated);
-            cursor: pointer;
-            transition: all var(--transition);
-            position: relative;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.4s var(--ease-out), opacity 0.4s;
+            object-fit: cover;
+            width: 80%;
+            height: auto;
+            max-height: 220px;
         }
-        .project-thumb:hover {
-            border-color: var(--border-accent);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
+        /* Main image - smaller, on top */
+        .project-stack .stack-main {
+            z-index: 5;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55%;
+            max-height: 180px;
+            border: 2px solid var(--border-hover);
         }
-        .project-thumb .placeholder-img {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            color: var(--text-faint);
-            transition: all var(--transition);
+        /* Behind images - larger, offset, lower z-index */
+        .project-stack .stack-behind {
+            z-index: 1;
+            opacity: 0.6;
+            filter: brightness(0.7);
+            transition: all 0.4s;
         }
-        .project-thumb:hover .placeholder-img {
-            color: var(--text-muted);
+        .project-stack .stack-behind:nth-of-type(1) { top: 10%; left: 15%; width: 70%; max-height: 240px; z-index: 4; }
+        .project-stack .stack-behind:nth-of-type(2) { top: 5%; right: 15%; width: 65%; max-height: 220px; z-index: 3; }
+        .project-stack .stack-behind:nth-of-type(3) { bottom: 5%; left: 10%; width: 60%; max-height: 200px; z-index: 2; }
+        .project-stack .stack-behind:nth-of-type(4) { bottom: 10%; right: 10%; width: 55%; max-height: 180px; z-index: 1; }
+        .project-card:hover .stack-main {
+            transform: translate(-50%, -50%) scale(1.03);
         }
-
-        /* Placeholder gradients per project */
-        .ph-agrosmart .project-main-image .placeholder-img {
-            background: linear-gradient(135deg, #1A2E1A 0%, #2D4A2D 50%, #1F3B1F 100%);
-            color: #7BA07B;
-        }
-        .ph-agrosmart .project-thumb .placeholder-img {
-            background: linear-gradient(135deg, #1A2A1A 0%, #243C24 100%);
-            color: #5A7A5A;
-        }
-        .ph-castle .project-main-image .placeholder-img {
-            background: linear-gradient(135deg, #1A1A2E 0%, #2D2D4A 50%, #1F1F3B 100%);
-            color: #7B7BA0;
-        }
-        .ph-castle .project-thumb .placeholder-img {
-            background: linear-gradient(135deg, #1A1A2A 0%, #24243C 100%);
-            color: #5A5A7A;
-        }
-        .ph-project3 .project-main-image .placeholder-img {
-            background: linear-gradient(135deg, #2E1A1A 0%, #4A2D2D 50%, #3B1F1F 100%);
-            color: #A07B7B;
-        }
-        .ph-project3 .project-thumb .placeholder-img {
-            background: linear-gradient(135deg, #2A1A1A 0%, #3C2424 100%);
-            color: #7A5A5A;
+        .project-card:hover .stack-behind {
+            opacity: 0.8;
+            filter: brightness(0.85);
         }
 
         /* ============ LIGHTBOX ============ */
@@ -1006,7 +935,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            user-select: none;
         }
         .lightbox-image-wrap {
             position: relative;
@@ -1016,20 +944,12 @@
             align-items: center;
             justify-content: center;
         }
-        .lightbox-image-placeholder {
-            width: min(80vw, 900px);
-            aspect-ratio: 16/10;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-hover);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            color: var(--text-muted);
-            background: var(--bg-elevated);
+        .lightbox-image-wrap img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: var(--radius-md);
             box-shadow: var(--shadow-xl);
+            object-fit: contain;
         }
         .lightbox-close {
             position: absolute;
@@ -1075,12 +995,8 @@
             z-index: 3;
             cursor: pointer;
         }
-        .lightbox-prev {
-            left: 16px;
-        }
-        .lightbox-next {
-            right: 16px;
-        }
+        .lightbox-prev { left: 16px; }
+        .lightbox-next { right: 16px; }
         .lightbox-prev:hover,
         .lightbox-next:hover {
             background: rgba(255, 255, 255, 0.16);
@@ -1101,18 +1017,6 @@
             letter-spacing: 0.04em;
             z-index: 3;
             pointer-events: none;
-        }
-        .lightbox-caption {
-            position: absolute;
-            bottom: 16px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            z-index: 3;
-            pointer-events: none;
-            max-width: 80%;
         }
 
         /* ============ PROCESS ============ */
@@ -1268,9 +1172,7 @@
             font-weight: 800;
             letter-spacing: -0.03em;
         }
-        .footer-logo span {
-            color: var(--accent);
-        }
+        .footer-logo span { color: var(--accent); }
         .footer-links {
             display: flex;
             gap: 24px;
@@ -1280,9 +1182,7 @@
             color: var(--text-muted);
             transition: color 0.25s;
         }
-        .footer-links a:hover {
-            color: var(--text-primary);
-        }
+        .footer-links a:hover { color: var(--text-primary); }
         .footer-copy {
             font-size: 0.8rem;
             color: var(--text-faint);
@@ -1298,206 +1198,76 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .animate-on-scroll[data-delay='1'] {
-            transition-delay: 0.1s;
-        }
-        .animate-on-scroll[data-delay='2'] {
-            transition-delay: 0.2s;
-        }
-        .animate-on-scroll[data-delay='3'] {
-            transition-delay: 0.3s;
-        }
-        .animate-on-scroll[data-delay='4'] {
-            transition-delay: 0.4s;
-        }
-        .animate-on-scroll[data-delay='5'] {
-            transition-delay: 0.5s;
-        }
+        .animate-on-scroll[data-delay='1'] { transition-delay: 0.1s; }
+        .animate-on-scroll[data-delay='2'] { transition-delay: 0.2s; }
+        .animate-on-scroll[data-delay='3'] { transition-delay: 0.3s; }
+        .animate-on-scroll[data-delay='4'] { transition-delay: 0.4s; }
+        .animate-on-scroll[data-delay='5'] { transition-delay: 0.5s; }
 
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            *,
-            *::before,
-            *::after {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
                 transition-delay: 0ms !important;
             }
-            .animate-on-scroll {
-                opacity: 1;
-                transform: none;
-            }
+            .animate-on-scroll { opacity: 1; transform: none; }
         }
 
         /* ============ RESPONSIVE ============ */
         @media (max-width: 1024px) {
-            .hero-inner {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero-mockup-wrap {
-                order: 2;
-            }
-            .hero-text {
-                order: 1;
-                text-align: center;
-            }
-            .hero-sub {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-actions {
-                justify-content: center;
-            }
-            .hero-badge {
-                margin-left: auto;
-                margin-right: auto;
-            }
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+            .hero-mockup-wrap { order: 2; }
+            .hero-text { order: 1; text-align: center; }
+            .hero-sub { margin-left: auto; margin-right: auto; }
+            .hero-actions { justify-content: center; }
+            .hero-badge { margin-left: auto; margin-right: auto; }
+            .project-grid { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .nav-cta .btn {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .section-padding {
-                padding: 70px 0;
-            }
-            .section-padding-sm {
-                padding: 50px 0;
-            }
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 12px;
-            }
-            .pricing-card {
-                padding: 32px 24px;
-            }
-            .pricing-card .price-main {
-                font-size: 2.8rem;
-            }
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-                gap: 12px;
-            }
-            .process-timeline::before {
-                left: 19px;
-            }
-            .process-step {
-                gap: 14px;
-            }
-            .process-step .step-number {
-                width: 40px;
-                height: 40px;
-                font-size: 0.7rem;
-            }
-            .project-thumbnails {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 16px 20px;
-                gap: 10px;
-            }
-            .project-header {
-                padding: 16px 20px;
-            }
-            .lightbox-prev {
-                left: 8px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.3rem;
-            }
-            .lightbox-next {
-                right: 8px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.3rem;
-            }
-            .lightbox-close {
-                top: 10px;
-                right: 10px;
-                width: 38px;
-                height: 38px;
-                font-size: 1.2rem;
-            }
-            .lightbox-image-placeholder {
-                width: 92vw;
-                font-size: 1rem;
-            }
+            .nav-links { display: none; }
+            .nav-cta .btn { display: none; }
+            .hamburger { display: flex; }
+            .section-padding { padding: 70px 0; }
+            .section-padding-sm { padding: 50px 0; }
+            .services-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+            .pricing-card { padding: 32px 24px; }
+            .pricing-card .price-main { font-size: 2.8rem; }
+            .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+            .process-timeline::before { left: 19px; }
+            .process-step { gap: 14px; }
+            .process-step .step-number { width: 40px; height: 40px; font-size: 0.7rem; }
+            .project-stack { height: 260px; }
+            .project-stack img { width: 85%; max-height: 160px; }
+            .project-stack .stack-main { width: 60%; max-height: 140px; }
+            .lightbox-prev { left: 8px; width: 40px; height: 40px; font-size: 1.3rem; }
+            .lightbox-next { right: 8px; width: 40px; height: 40px; font-size: 1.3rem; }
+            .lightbox-close { top: 10px; right: 10px; width: 38px; height: 38px; font-size: 1.2rem; }
         }
-
         @media (max-width: 480px) {
-            .hero {
-                padding-top: calc(var(--nav-height) + 40px);
-                padding-bottom: 50px;
-            }
-            .hero h1 {
-                font-size: 2.1rem;
-            }
-            .hero-sub {
-                font-size: 1rem;
-            }
-            .hero-actions {
-                flex-direction: column;
-            }
-            .hero-actions .btn {
-                width: 100%;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .service-card {
-                padding: 22px 18px;
-            }
-            .pricing-card .price-main {
-                font-size: 2.4rem;
-            }
-            .pricing-card .price-yearly {
-                font-size: 1.2rem;
-            }
-            .browser-body {
-                padding: 14px;
-                gap: 10px;
-            }
-            .mini-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
-            }
-            .mini-card {
-                padding: 6px;
-            }
-            .section-heading {
-                font-size: 1.7rem;
-            }
-            .free-demo h2,
-            .final-cta h2 {
-                font-size: 1.7rem;
-            }
-            .project-thumbnails {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 12px 14px;
-                gap: 8px;
-            }
-            .project-header h3 {
-                font-size: 1.05rem;
-            }
-            .lightbox-image-placeholder {
-                width: 95vw;
-                aspect-ratio: 4/3;
-                font-size: 0.9rem;
-            }
+            .hero { padding-top: calc(var(--nav-height) + 40px); padding-bottom: 50px; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero-sub { font-size: 1rem; }
+            .hero-actions { flex-direction: column; }
+            .hero-actions .btn { width: 100%; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { padding: 22px 18px; }
+            .pricing-card .price-main { font-size: 2.4rem; }
+            .pricing-card .price-yearly { font-size: 1.2rem; }
+            .browser-body { padding: 14px; gap: 10px; }
+            .mini-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+            .mini-card { padding: 6px; }
+            .section-heading { font-size: 1.7rem; }
+            .free-demo h2, .final-cta h2 { font-size: 1.7rem; }
+            .project-stack { height: 220px; }
+            .project-stack img { width: 90%; max-height: 120px; }
+            .project-stack .stack-main { width: 65%; max-height: 100px; }
+            .lightbox-image-wrap img { max-width: 95vw; }
         }
     </style>
 </head>
 <body>
-
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ============ NAVIGATION ============ -->
@@ -1529,7 +1299,7 @@
         <a href="#get-demo" class="btn btn-primary">Get a Free Demo</a>
     </nav>
 
-    <!-- ============ MAIN ============ -->
+    <!-- ============ MAIN CONTENT ============ -->
     <main id="main-content" role="main">
 
         <!-- HERO -->
@@ -1632,7 +1402,7 @@
             </div>
         </section>
 
-        <!-- ============ GALLERY ============ -->
+        <!-- ============ GALLERY (TWO PROJECTS, STACKED) ============ -->
         <section class="gallery section-padding" id="work" aria-labelledby="gallery-heading">
             <div class="container">
                 <div class="text-center animate-on-scroll">
@@ -1643,58 +1413,32 @@
 
                 <div class="project-grid">
                     <!-- Project 1: AgroSmart -->
-                    <div class="project-card ph-agrosmart animate-on-scroll" data-project="agrosmart" role="button" tabindex="0" aria-label="View AgroSmart project gallery">
+                    <div class="project-card animate-on-scroll" data-project="agrosmart" role="button" tabindex="0" aria-label="View AgroSmart project gallery">
                         <div class="project-header">
                             <h3>AgroSmart</h3>
                             <span class="project-view-hint">View Project &#8594;</span>
                         </div>
-                        <div class="project-main-image" data-image-index="0">
-                            <img src="main-1.jpg" alt="AgroSmart website concept">
-                        </div>
-                        <div class="project-thumbnails">
-                            <div class="project-thumb" data-image-index="1" role="button" tabindex="0" aria-label="AgroSmart image 1">
-                                <img src="1-1.png" alt="AgroSmart concept 1">
-                            </div>
-                            <div class="project-thumb" data-image-index="2" role="button" tabindex="0" aria-label="AgroSmart image 2">
-                                <img src="1-2.png" alt="AgroSmart concept 2">
-                            </div>
-                            <div class="project-thumb" data-image-index="3" role="button" tabindex="0" aria-label="AgroSmart image 3">
-                                <img src="1-3.png" alt="AgroSmart concept 3">
-                            </div>
-                            <div class="project-thumb" data-image-index="4" role="button" tabindex="0" aria-label="AgroSmart image 4">
-                                <img src="1-4.png" alt="AgroSmart concept 4">
-                            </div>
+                        <div class="project-stack">
+                            <img src="1-4.png" alt="AgroSmart concept 4" class="stack-behind" loading="lazy">
+                            <img src="1-3.png" alt="AgroSmart concept 3" class="stack-behind" loading="lazy">
+                            <img src="1-2.png" alt="AgroSmart concept 2" class="stack-behind" loading="lazy">
+                            <img src="1-1.png" alt="AgroSmart concept 1" class="stack-behind" loading="lazy">
+                            <img src="main-1.png" alt="AgroSmart main concept" class="stack-main" loading="lazy">
                         </div>
                     </div>
 
-                    
-                    <!-- Project 3: Placeholder Name -->
-                    <div class="project-card ph-project3 animate-on-scroll" data-project="project3" role="button" tabindex="0" aria-label="View third project gallery">
+                    <!-- Project 2: Placeholder Name (use your own) -->
+                    <div class="project-card animate-on-scroll" data-project="project2" role="button" tabindex="0" aria-label="View second project gallery">
                         <div class="project-header">
-                            <h3>Project Three</h3>
+                            <h3>Your Project Name</h3>
                             <span class="project-view-hint">View Project &#8594;</span>
                         </div>
-                        <div class="project-main-image" data-image-index="0">
-                            <!-- Replace with: <img src="images/main-3.jpg" alt="Third project website concept"> -->
-                            <div class="placeholder-img">main-3.jpg</div>
-                        </div>
-                        <div class="project-thumbnails">
-                            <div class="project-thumb" data-image-index="1" role="button" tabindex="0" aria-label="Third project image 1">
-                                <!-- Replace with: <img src="images/3-1.jpg" alt="Third project concept 1"> -->
-                                <div class="placeholder-img">3-1.jpg</div>
-                            </div>
-                            <div class="project-thumb" data-image-index="2" role="button" tabindex="0" aria-label="Third project image 2">
-                                <!-- Replace with: <img src="images/3-2.jpg" alt="Third project concept 2"> -->
-                                <div class="placeholder-img">3-2.jpg</div>
-                            </div>
-                            <div class="project-thumb" data-image-index="3" role="button" tabindex="0" aria-label="Third project image 3">
-                                <!-- Replace with: <img src="images/3-3.jpg" alt="Third project concept 3"> -->
-                                <div class="placeholder-img">3-3.jpg</div>
-                            </div>
-                            <div class="project-thumb" data-image-index="4" role="button" tabindex="0" aria-label="Third project image 4">
-                                <!-- Replace with: <img src="images/3-4.jpg" alt="Third project concept 4"> -->
-                                <div class="placeholder-img">3-4.jpg</div>
-                            </div>
+                        <div class="project-stack">
+                            <img src="2-4.png" alt="Project 2 concept 4" class="stack-behind" loading="lazy">
+                            <img src="2-3.png" alt="Project 2 concept 3" class="stack-behind" loading="lazy">
+                            <img src="2-2.png" alt="Project 2 concept 2" class="stack-behind" loading="lazy">
+                            <img src="2-1.png" alt="Project 2 concept 1" class="stack-behind" loading="lazy">
+                            <img src="main-2.png" alt="Project 2 main concept" class="stack-main" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1766,7 +1510,7 @@
             <button class="lightbox-close" id="lightbox-close" aria-label="Close gallery">&times;</button>
             <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
             <div class="lightbox-image-wrap">
-                <div class="lightbox-image-placeholder" id="lightbox-image-display">image</div>
+                <img id="lightbox-image-display" src="main-1.png" alt="Project image">
             </div>
             <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
             <div class="lightbox-counter" id="lightbox-counter">1 / 5</div>
@@ -1789,7 +1533,6 @@
                 mobileMenu.classList.toggle('open', !open);
                 document.body.style.overflow = open ? '' : 'hidden';
             }
-
             function closeMenu() {
                 hamburger.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
@@ -1808,7 +1551,6 @@
             // ---- Nav scroll state ----
             const siteNav = document.getElementById('site-nav');
             let scrolled = false;
-
             function updateNav() {
                 const s = window.scrollY > 10;
                 if (s !== scrolled) {
@@ -1858,45 +1600,28 @@
             const lightboxPrev = document.getElementById('lightbox-prev');
             const lightboxNext = document.getElementById('lightbox-next');
             const lightboxCounter = document.getElementById('lightbox-counter');
-            const lightboxImageDisplay = document.getElementById('lightbox-image-display');
+            const lightboxImg = document.getElementById('lightbox-image-display');
 
-            // Define project data
             const projects = {
                 agrosmart: {
                     name: 'AgroSmart',
                     images: [
-                        { label: 'main-1.png', desc: 'AgroSmart — Main Concept' },
-                        { label: '1-1.png', desc: 'AgroSmart — Detail 1' },
-                        { label: '1-2.png', desc: 'AgroSmart — Detail 2' },
-                        { label: '1-3.png', desc: 'AgroSmart — Detail 3' },
-                        { label: '1-4.png', desc: 'AgroSmart — Detail 4' }
-                    ],
-                    gradient: 'linear-gradient(135deg, #1A2E1A 0%, #2D4A2D 50%, #1F3B1F 100%)',
-                    textColor: '#7BA07B'
+                        { src: 'main-1.png', alt: 'AgroSmart main concept' },
+                        { src: '1-1.png', alt: 'AgroSmart concept 1' },
+                        { src: '1-2.png', alt: 'AgroSmart concept 2' },
+                        { src: '1-3.png', alt: 'AgroSmart concept 3' },
+                        { src: '1-4.png', alt: 'AgroSmart concept 4' }
+                    ]
                 },
-                castle: {
-                    name: 'Castle Verifier',
+                project2: {
+                    name: 'Your Project',
                     images: [
-                        { label: 'main-2.jpg', desc: 'Castle Verifier — Main Concept' },
-                        { label: '2-1.jpg', desc: 'Castle Verifier — Detail 1' },
-                        { label: '2-2.jpg', desc: 'Castle Verifier — Detail 2' },
-                        { label: '2-3.jpg', desc: 'Castle Verifier — Detail 3' },
-                        { label: '2-4.jpg', desc: 'Castle Verifier — Detail 4' }
-                    ],
-                    gradient: 'linear-gradient(135deg, #1A1A2E 0%, #2D2D4A 50%, #1F1F3B 100%)',
-                    textColor: '#7B7BA0'
-                },
-                project3: {
-                    name: 'Project Three',
-                    images: [
-                        { label: 'main-3.jpg', desc: 'Project Three — Main Concept' },
-                        { label: '3-1.jpg', desc: 'Project Three — Detail 1' },
-                        { label: '3-2.jpg', desc: 'Project Three — Detail 2' },
-                        { label: '3-3.jpg', desc: 'Project Three — Detail 3' },
-                        { label: '3-4.jpg', desc: 'Project Three — Detail 4' }
-                    ],
-                    gradient: 'linear-gradient(135deg, #2E1A1A 0%, #4A2D2D 50%, #3B1F1F 100%)',
-                    textColor: '#A07B7B'
+                        { src: 'main-2.png', alt: 'Project 2 main concept' },
+                        { src: '2-1.png', alt: 'Project 2 concept 1' },
+                        { src: '2-2.png', alt: 'Project 2 concept 2' },
+                        { src: '2-3.png', alt: 'Project 2 concept 3' },
+                        { src: '2-4.png', alt: 'Project 2 concept 4' }
+                    ]
                 }
             };
 
@@ -1925,11 +1650,9 @@
                 const project = projects[currentProject];
                 if (!project) return;
                 const imgData = project.images[currentIndex];
-                lightboxImageDisplay.textContent = imgData.label;
-                lightboxImageDisplay.style.background = project.gradient;
-                lightboxImageDisplay.style.color = project.textColor;
+                lightboxImg.src = imgData.src;
+                lightboxImg.alt = imgData.alt;
                 lightboxCounter.textContent = (currentIndex + 1) + ' / ' + totalImages;
-                lightboxImageDisplay.setAttribute('aria-label', imgData.desc);
             }
 
             function goPrev() {
@@ -1944,7 +1667,6 @@
                 updateLightboxImage();
             }
 
-            // Event listeners for lightbox
             lightboxClose.addEventListener('click', closeLightbox);
             lightboxOverlay.addEventListener('click', closeLightbox);
             lightboxPrev.addEventListener('click', goPrev);
@@ -1957,7 +1679,7 @@
                 if (e.key === 'ArrowRight') goNext();
             });
 
-            // Touch/swipe support for lightbox
+            // Touch swipe support
             let touchStartX = null;
             lightbox.addEventListener('touchstart', function(e) {
                 touchStartX = e.touches[0].clientX;
@@ -1966,48 +1688,23 @@
                 if (touchStartX === null) return;
                 const diff = e.changedTouches[0].clientX - touchStartX;
                 if (Math.abs(diff) > 50) {
-                    if (diff > 0) goPrev();
-                    else goNext();
+                    if (diff > 0) goPrev(); else goNext();
                 }
                 touchStartX = null;
             }, { passive: true });
 
-            // Click handlers on project cards
+            // Click handlers for project cards
             const projectCards = document.querySelectorAll('.project-card');
             projectCards.forEach(card => {
                 const projectKey = card.getAttribute('data-project');
-                // Click on main image or card header opens at index 0
-                const mainImage = card.querySelector('.project-main-image');
-                const header = card.querySelector('.project-header');
-                const thumbs = card.querySelectorAll('.project-thumb');
-
-                function openAtIndex(idx) {
-                    openLightbox(projectKey, idx);
-                }
-                if (mainImage) mainImage.addEventListener('click', function(e) { e.stopPropagation();
-                    openAtIndex(0); });
-                if (header) header.addEventListener('click', function(e) { e.stopPropagation();
-                    openAtIndex(0); });
-                thumbs.forEach((thumb, i) => {
-                    thumb.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        openAtIndex(i + 1);
-                    });
+                card.addEventListener('click', function() {
+                    openLightbox(projectKey, 0);
                 });
-                // Keyboard on card
                 card.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
                         e.preventDefault();
-                        openAtIndex(0);
+                        openLightbox(projectKey, 0);
                     }
-                });
-                thumbs.forEach((thumb, i) => {
-                    thumb.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            openAtIndex(i + 1);
-                        }
-                    });
                 });
             });
 
