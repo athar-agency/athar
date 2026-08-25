@@ -809,7 +809,7 @@
             font-weight: 600;
         }
 
-        /* ============ GALLERY (NEW STACKED LAYOUT) ============ */
+        /* ============ GALLERY (UPDATED GRID STACK) ============ */
         .gallery {
             background: var(--bg-primary);
         }
@@ -858,51 +858,52 @@
         .project-card:hover .project-view-hint {
             color: var(--accent);
         }
-        /* Stack container */
+        /* Stack container: 2x2 grid, no overlap between behind images */
         .project-stack {
             position: relative;
             height: 320px;
             background: var(--bg-elevated);
             overflow: hidden;
             border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 0;
         }
         .project-stack img {
-            position: absolute;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-md);
-            transition: transform 0.4s var(--ease-out), opacity 0.4s;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            width: 80%;
-            height: auto;
-            max-height: 220px;
+            display: block;
         }
-        /* Main image - smaller, on top */
+        /* Behind images fill their grid cells */
+        .project-stack .stack-behind {
+            opacity: 0.75;
+            filter: brightness(0.8);
+            transition: opacity 0.3s, filter 0.3s;
+        }
+        .project-stack .stack-behind:hover {
+            opacity: 0.9;
+            filter: brightness(0.9);
+        }
+        /* Main image centered and overlapping all four */
         .project-stack .stack-main {
-            z-index: 5;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 55%;
-            max-height: 180px;
+            max-width: 280px;
+            height: auto;
+            max-height: 75%;
+            object-fit: contain;
+            z-index: 5;
             border: 2px solid var(--border-hover);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
         }
-        /* Behind images - larger, offset, lower z-index */
-        .project-stack .stack-behind {
-            z-index: 1;
-            opacity: 0.6;
-            filter: brightness(0.7);
-            transition: all 0.4s;
-        }
-        .project-stack .stack-behind:nth-of-type(1) { top: 10%; left: 15%; width: 70%; max-height: 240px; z-index: 4; }
-        .project-stack .stack-behind:nth-of-type(2) { top: 5%; right: 15%; width: 65%; max-height: 220px; z-index: 3; }
-        .project-stack .stack-behind:nth-of-type(3) { bottom: 5%; left: 10%; width: 60%; max-height: 200px; z-index: 2; }
-        .project-stack .stack-behind:nth-of-type(4) { bottom: 10%; right: 10%; width: 55%; max-height: 180px; z-index: 1; }
         .project-card:hover .stack-main {
-            transform: translate(-50%, -50%) scale(1.03);
-        }
-        .project-card:hover .stack-behind {
-            opacity: 0.8;
-            filter: brightness(0.85);
+            transform: translate(-50%, -50%) scale(1.02);
         }
 
         /* ============ LIGHTBOX ============ */
@@ -1239,8 +1240,7 @@
             .process-step { gap: 14px; }
             .process-step .step-number { width: 40px; height: 40px; font-size: 0.7rem; }
             .project-stack { height: 260px; }
-            .project-stack img { width: 85%; max-height: 160px; }
-            .project-stack .stack-main { width: 60%; max-height: 140px; }
+            .project-stack .stack-main { width: 60%; max-width: 220px; max-height: 70%; }
             .lightbox-prev { left: 8px; width: 40px; height: 40px; font-size: 1.3rem; }
             .lightbox-next { right: 8px; width: 40px; height: 40px; font-size: 1.3rem; }
             .lightbox-close { top: 10px; right: 10px; width: 38px; height: 38px; font-size: 1.2rem; }
@@ -1261,8 +1261,7 @@
             .section-heading { font-size: 1.7rem; }
             .free-demo h2, .final-cta h2 { font-size: 1.7rem; }
             .project-stack { height: 220px; }
-            .project-stack img { width: 90%; max-height: 120px; }
-            .project-stack .stack-main { width: 65%; max-height: 100px; }
+            .project-stack .stack-main { width: 65%; max-width: 180px; max-height: 65%; }
             .lightbox-image-wrap img { max-width: 95vw; }
         }
     </style>
@@ -1402,7 +1401,7 @@
             </div>
         </section>
 
-        <!-- ============ GALLERY (TWO PROJECTS, STACKED) ============ -->
+        <!-- ============ GALLERY (TWO PROJECTS, GRID STACK) ============ -->
         <section class="gallery section-padding" id="work" aria-labelledby="gallery-heading">
             <div class="container">
                 <div class="text-center animate-on-scroll">
