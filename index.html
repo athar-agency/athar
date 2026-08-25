@@ -10,9 +10,6 @@
     <meta property="og:type" content="website">
     <title>Athar — Web Design for Startups</title>
     <style>
-        /* ============================================
-                   RESET & CSS VARIABLES
-                   ============================================ */
         :root {
             --bg-primary: #0B0B13;
             --bg-secondary: #10101C;
@@ -36,7 +33,6 @@
             --radius-xl: 24px;
             --radius-full: 9999px;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'Roboto Mono', monospace;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.35);
             --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.45);
@@ -49,9 +45,6 @@
             --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ============================================
-                   RESET
-                   ============================================ */
         *,
         *::before,
         *::after {
@@ -108,7 +101,6 @@
             border-radius: var(--radius-sm);
         }
 
-        /* Skip link for accessibility */
         .skip-link {
             position: absolute;
             top: -100%;
@@ -126,17 +118,11 @@
             top: 16px;
         }
 
-        /* ============================================
-                   SELECTION
-                   ============================================ */
         ::selection {
             background: var(--accent);
             color: #fff;
         }
 
-        /* ============================================
-                   SCROLLBAR (WebKit)
-                   ============================================ */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -152,9 +138,6 @@
             background: #3A3A4E;
         }
 
-        /* ============================================
-                   UTILITY CLASSES
-                   ============================================ */
         .container {
             width: 100%;
             max-width: var(--max-width);
@@ -165,7 +148,6 @@
         .section-padding {
             padding: 100px 0;
         }
-
         .section-padding-sm {
             padding: 70px 0;
         }
@@ -204,9 +186,6 @@
             margin-right: auto;
         }
 
-        /* ============================================
-                   BUTTONS
-                   ============================================ */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -223,7 +202,6 @@
             overflow: hidden;
             user-select: none;
         }
-
         .btn-primary {
             background: var(--accent);
             color: #fff;
@@ -238,7 +216,6 @@
             transform: translateY(0);
             box-shadow: var(--shadow-accent);
         }
-
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
@@ -252,7 +229,6 @@
         .btn-secondary:active {
             transform: translateY(0);
         }
-
         .btn-lg {
             padding: 16px 36px;
             font-size: 1rem;
@@ -262,9 +238,7 @@
             font-size: 0.85rem;
         }
 
-        /* ============================================
-                   NAVIGATION
-                   ============================================ */
+        /* ============ NAVIGATION ============ */
         .site-nav {
             position: fixed;
             top: 0;
@@ -282,14 +256,12 @@
             background: rgba(11, 11, 19, 0.95);
             border-bottom-color: rgba(255, 255, 255, 0.12);
         }
-
         .nav-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 100%;
         }
-
         .nav-logo {
             font-size: 1.5rem;
             font-weight: 800;
@@ -299,7 +271,6 @@
         .nav-logo span {
             color: var(--accent);
         }
-
         .nav-links {
             display: flex;
             align-items: center;
@@ -329,7 +300,6 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .nav-cta {
             display: flex;
             align-items: center;
@@ -339,8 +309,6 @@
             padding: 10px 22px;
             font-size: 0.85rem;
         }
-
-        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -371,8 +339,6 @@
         .hamburger.active span:nth-child(3) {
             transform: translateY(-7px) rotate(-45deg);
         }
-
-        /* Mobile menu */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -417,9 +383,7 @@
             padding: 16px 32px;
         }
 
-        /* ============================================
-                   HERO SECTION
-                   ============================================ */
+        /* ============ HERO ============ */
         .hero {
             padding-top: calc(var(--nav-height) + 60px);
             padding-bottom: 80px;
@@ -446,7 +410,6 @@
             background: radial-gradient(circle, rgba(255, 90, 60, 0.04) 0%, transparent 60%);
             pointer-events: none;
         }
-
         .hero-inner {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -455,7 +418,6 @@
             position: relative;
             z-index: 1;
         }
-
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -478,7 +440,6 @@
             border-radius: 50%;
             animation: pulse-dot 2s infinite;
         }
-
         @keyframes pulse-dot {
             0%,
             100% {
@@ -490,7 +451,6 @@
                 transform: scale(1.5);
             }
         }
-
         .hero h1 {
             font-size: clamp(2.4rem, 5vw, 3.9rem);
             font-weight: 800;
@@ -502,7 +462,6 @@
         .hero h1 .highlight {
             color: var(--accent);
         }
-
         .hero-sub {
             font-size: 1.15rem;
             color: var(--text-secondary);
@@ -510,14 +469,11 @@
             line-height: 1.7;
             margin-bottom: 36px;
         }
-
         .hero-actions {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
         }
-
-        /* Hero mockup */
         .hero-mockup-wrap {
             position: relative;
             display: flex;
@@ -531,7 +487,6 @@
             background: radial-gradient(circle at center, rgba(255, 90, 60, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
-
         .browser-mockup {
             width: 100%;
             max-width: 520px;
@@ -548,7 +503,6 @@
             transform: translateY(-4px);
             box-shadow: 0 20px 72px rgba(0, 0, 0, 0.6);
         }
-
         .browser-chrome {
             display: flex;
             align-items: center;
@@ -586,19 +540,16 @@
             padding: 0 12px;
             font-size: 0.7rem;
             color: var(--text-muted);
-            font-family: var(--font-mono);
+            font-family: var(--font-mono, monospace);
             border: 1px solid var(--border);
             letter-spacing: 0.02em;
         }
-
         .browser-body {
             padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 16px;
         }
-
-        /* Mini website inside hero mockup */
         .mini-nav {
             display: flex;
             align-items: center;
@@ -623,7 +574,6 @@
             background: var(--text-faint);
             border-radius: 2px;
         }
-
         .mini-hero {
             text-align: center;
             padding: 16px 0;
@@ -651,7 +601,6 @@
             font-weight: 600;
             letter-spacing: 0.02em;
         }
-
         .mini-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -691,9 +640,7 @@
             margin-bottom: 0;
         }
 
-        /* ============================================
-                   SERVICES SECTION
-                   ============================================ */
+        /* ============ SERVICES ============ */
         .services {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -759,9 +706,7 @@
             line-height: 1.6;
         }
 
-        /* ============================================
-                   PRICING SECTION
-                   ============================================ */
+        /* ============ PRICING ============ */
         .pricing-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -790,7 +735,6 @@
             font-weight: 800;
             letter-spacing: -0.04em;
             line-height: 1.1;
-            color: var(--text-primary);
         }
         .pricing-card .price-main .currency {
             font-size: 1.8rem;
@@ -838,9 +782,7 @@
             margin-top: 20px;
         }
 
-        /* ============================================
-                   FREE DEMO SECTION
-                   ============================================ */
+        /* ============ FREE DEMO ============ */
         .free-demo {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -901,206 +843,279 @@
             font-weight: 600;
         }
 
-        /* ============================================
-                   GALLERY SECTION
-                   ============================================ */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+        /* ============ GALLERY ============ */
+        .gallery {
+            background: var(--bg-primary);
+        }
+        .project-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
             margin-top: 48px;
         }
-        .gallery-item {
+        .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-xl);
             overflow: hidden;
             transition: all var(--transition);
             cursor: pointer;
-            position: relative;
         }
-        .gallery-item:hover {
+        .project-card:hover {
             border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
         }
-        .gallery-item .gallery-chrome {
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 28px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+        .project-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+        .project-header .project-view-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 6px;
-            padding: 10px 14px;
-            background: var(--bg-secondary);
+            transition: color 0.25s;
+        }
+        .project-card:hover .project-view-hint {
+            color: var(--accent);
+        }
+        .project-main-image {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
             border-bottom: 1px solid var(--border);
+            background: var(--bg-elevated);
         }
-        .gallery-item .gallery-chrome span {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #2A2A3C;
-        }
-        .gallery-item .gallery-chrome span:nth-child(1) {
-            background: #FF5F57;
-        }
-        .gallery-item .gallery-chrome span:nth-child(2) {
-            background: #FEBC2E;
-        }
-        .gallery-item .gallery-chrome span:nth-child(3) {
-            background: #28C840;
-        }
-        .gallery-item .gallery-preview {
-            padding: 20px;
-            aspect-ratio: 16/10;
+        .project-main-image .placeholder-img {
+            width: 100%;
+            height: 100%;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            transition: transform 0.4s var(--ease-out);
+        }
+        .project-card:hover .project-main-image .placeholder-img {
+            transform: scale(1.02);
+        }
+        .project-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 20px 28px;
+        }
+        .project-thumb {
+            aspect-ratio: 16/10;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            cursor: pointer;
+            transition: all var(--transition);
             position: relative;
         }
-        .gallery-item .gallery-label {
-            position: absolute;
-            bottom: 10px;
-            right: 14px;
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+        .project-thumb:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        .project-thumb .placeholder-img {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: var(--text-faint);
+            transition: all var(--transition);
+        }
+        .project-thumb:hover .placeholder-img {
             color: var(--text-muted);
-            background: rgba(11, 11, 19, 0.7);
-            padding: 4px 10px;
-            border-radius: var(--radius-sm);
+        }
+
+        /* Placeholder gradients per project */
+        .ph-agrosmart .project-main-image .placeholder-img {
+            background: linear-gradient(135deg, #1A2E1A 0%, #2D4A2D 50%, #1F3B1F 100%);
+            color: #7BA07B;
+        }
+        .ph-agrosmart .project-thumb .placeholder-img {
+            background: linear-gradient(135deg, #1A2A1A 0%, #243C24 100%);
+            color: #5A7A5A;
+        }
+        .ph-castle .project-main-image .placeholder-img {
+            background: linear-gradient(135deg, #1A1A2E 0%, #2D2D4A 50%, #1F1F3B 100%);
+            color: #7B7BA0;
+        }
+        .ph-castle .project-thumb .placeholder-img {
+            background: linear-gradient(135deg, #1A1A2A 0%, #24243C 100%);
+            color: #5A5A7A;
+        }
+        .ph-project3 .project-main-image .placeholder-img {
+            background: linear-gradient(135deg, #2E1A1A 0%, #4A2D2D 50%, #3B1F1F 100%);
+            color: #A07B7B;
+        }
+        .ph-project3 .project-thumb .placeholder-img {
+            background: linear-gradient(135deg, #2A1A1A 0%, #3C2424 100%);
+            color: #7A5A5A;
+        }
+
+        /* ============ LIGHTBOX ============ */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s var(--ease-out);
+        }
+        .lightbox.open {
+            display: flex;
+            opacity: 1;
+        }
+        .lightbox-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
         }
-
-        /* Gallery preview styles — different for each concept */
-        .gallery-preview .gp-line {
-            height: 4px;
-            border-radius: 2px;
-            background: #2A2A3C;
-        }
-        .gallery-preview .gp-line.short {
-            width: 60%;
-        }
-        .gallery-preview .gp-line.medium {
-            width: 80%;
-        }
-        .gallery-preview .gp-line.accent {
-            background: var(--accent-soft);
-        }
-        .gallery-preview .gp-block {
-            border-radius: var(--radius-sm);
-            background: #1A1A2A;
-            flex: 1;
-        }
-        .gallery-preview .gp-btn {
-            display: inline-block;
-            padding: 4px 12px;
-            background: var(--accent);
-            color: #fff;
-            border-radius: var(--radius-full);
-            font-size: 0.5rem;
-            font-weight: 600;
-        }
-        .gallery-preview .gp-row {
+        .lightbox-content {
+            position: relative;
+            z-index: 1;
+            max-width: 90vw;
+            max-height: 85vh;
             display: flex;
-            gap: 6px;
-        }
-        .gallery-preview .gp-col {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .gallery-preview .gp-col .gp-block {
-            flex: 1;
-            min-height: 24px;
-        }
-
-        /* Concept 1: Clean SaaS Landing (light) */
-        .gallery-preview.gp-light {
-            background: #F5F5F8;
-        }
-        .gallery-preview.gp-light .gp-line {
-            background: #D0D0DA;
-        }
-        .gallery-preview.gp-light .gp-block {
-            background: #E8E8EE;
-            border: 1px solid #DADAE4;
-        }
-        .gallery-preview.gp-light .gp-btn {
-            background: #FF5A3C;
-        }
-
-        /* Concept 2: Dark Tech */
-        .gallery-preview.gp-dark {
-            background: #0D0D16;
-        }
-        .gallery-preview.gp-dark .gp-line {
-            background: #3A3A4E;
-        }
-        .gallery-preview.gp-dark .gp-block {
-            background: #1A1A2A;
-            border: 1px solid #2A2A3C;
-        }
-
-        /* Concept 3: Product Showcase */
-        .gallery-preview.gp-product {
-            background: #F0EDF5;
-        }
-        .gallery-preview.gp-product .gp-line {
-            background: #C8C4D4;
-        }
-        .gallery-preview.gp-product .gp-block {
-            background: #DDD8E8;
-        }
-
-        /* Concept 4: Waitlist */
-        .gallery-preview.gp-waitlist {
-            background: #0D1117;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            user-select: none;
         }
-        .gallery-preview.gp-waitlist .gp-line {
-            background: #3A4A5C;
+        .lightbox-image-wrap {
+            position: relative;
+            max-width: 100%;
+            max-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        /* Concept 5: Pricing */
-        .gallery-preview.gp-pricing {
-            background: #F7F6F3;
+        .lightbox-image-placeholder {
+            width: min(80vw, 900px);
+            aspect-ratio: 16/10;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            background: var(--bg-elevated);
+            box-shadow: var(--shadow-xl);
         }
-        .gallery-preview.gp-pricing .gp-line {
-            background: #D5D0C8;
+        .lightbox-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+            z-index: 3;
         }
-        .gallery-preview.gp-pricing .gp-block {
-            background: #E8E4DE;
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: var(--border-hover);
+            transform: scale(1.05);
         }
-
-        /* Concept 6: Portfolio */
-        .gallery-preview.gp-portfolio {
-            background: #111118;
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            color: var(--text-primary);
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+            z-index: 3;
+            cursor: pointer;
         }
-        .gallery-preview.gp-portfolio .gp-line {
-            background: #333344;
+        .lightbox-prev {
+            left: 16px;
         }
-        .gallery-preview.gp-portfolio .gp-block {
-            background: #1E1E2C;
+        .lightbox-next {
+            right: 16px;
         }
-
-        .gallery-note {
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: var(--border-hover);
+            transform: translateY(-50%) scale(1.05);
+        }
+        .lightbox-counter {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            letter-spacing: 0.04em;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .lightbox-caption {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
             text-align: center;
             font-size: 0.8rem;
             color: var(--text-muted);
-            margin-top: 24px;
-            letter-spacing: 0.04em;
-        }
-        .gallery-note span {
-            color: var(--accent);
-            font-weight: 600;
+            z-index: 3;
+            pointer-events: none;
+            max-width: 80%;
         }
 
-        /* ============================================
-                   PROCESS SECTION
-                   ============================================ */
+        /* ============ PROCESS ============ */
         .process {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -1173,15 +1188,12 @@
             font-size: 1.5rem;
             font-weight: 800;
             letter-spacing: -0.03em;
-            color: var(--text-primary);
         }
         .process-finale span {
             color: var(--accent);
         }
 
-        /* ============================================
-                   ABOUT SECTION
-                   ============================================ */
+        /* ============ ABOUT ============ */
         .about-inner {
             max-width: 600px;
         }
@@ -1194,9 +1206,7 @@
             line-height: 1.75;
         }
 
-        /* ============================================
-                   FINAL CTA SECTION
-                   ============================================ */
+        /* ============ FINAL CTA ============ */
         .final-cta {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -1240,9 +1250,7 @@
             font-weight: 600;
         }
 
-        /* ============================================
-                   FOOTER
-                   ============================================ */
+        /* ============ FOOTER ============ */
         .site-footer {
             background: var(--bg-primary);
             border-top: 1px solid var(--border);
@@ -1280,9 +1288,7 @@
             color: var(--text-faint);
         }
 
-        /* ============================================
-                   SCROLL ANIMATIONS
-                   ============================================ */
+        /* ============ SCROLL ANIMATIONS ============ */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -1308,9 +1314,6 @@
             transition-delay: 0.5s;
         }
 
-        /* ============================================
-                   REDUCED MOTION
-                   ============================================ */
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -1329,9 +1332,7 @@
             }
         }
 
-        /* ============================================
-                   RESPONSIVE BREAKPOINTS
-                   ============================================ */
+        /* ============ RESPONSIVE ============ */
         @media (max-width: 1024px) {
             .hero-inner {
                 grid-template-columns: 1fr;
@@ -1355,9 +1356,6 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 768px) {
@@ -1380,10 +1378,6 @@
                 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                 gap: 12px;
             }
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
             .pricing-card {
                 padding: 32px 24px;
             }
@@ -1405,6 +1399,37 @@
                 width: 40px;
                 height: 40px;
                 font-size: 0.7rem;
+            }
+            .project-thumbnails {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 16px 20px;
+                gap: 10px;
+            }
+            .project-header {
+                padding: 16px 20px;
+            }
+            .lightbox-prev {
+                left: 8px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+            .lightbox-next {
+                right: 8px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
+            }
+            .lightbox-image-placeholder {
+                width: 92vw;
+                font-size: 1rem;
             }
         }
 
@@ -1455,27 +1480,24 @@
             .final-cta h2 {
                 font-size: 1.7rem;
             }
-        }
-
-        @media (max-width: 360px) {
-            .container {
-                padding: 0 16px;
+            .project-thumbnails {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 12px 14px;
+                gap: 8px;
             }
-            .hero h1 {
-                font-size: 1.8rem;
+            .project-header h3 {
+                font-size: 1.05rem;
             }
-            .hero-sub {
-                font-size: 0.92rem;
-            }
-            .pricing-card .price-main {
-                font-size: 2rem;
+            .lightbox-image-placeholder {
+                width: 95vw;
+                aspect-ratio: 4/3;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Skip link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ============ NAVIGATION ============ -->
@@ -1492,15 +1514,12 @@
             <div class="nav-cta">
                 <a href="#get-demo" class="btn btn-primary btn-sm">Get a Free Demo</a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile menu -->
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
@@ -1510,10 +1529,10 @@
         <a href="#get-demo" class="btn btn-primary">Get a Free Demo</a>
     </nav>
 
-    <!-- ============ MAIN CONTENT ============ -->
+    <!-- ============ MAIN ============ -->
     <main id="main-content" role="main">
 
-        <!-- ============ HERO ============ -->
+        <!-- HERO -->
         <section class="hero" aria-labelledby="hero-heading">
             <div class="container hero-inner">
                 <div class="hero-text">
@@ -1535,17 +1554,13 @@
                 <div class="hero-mockup-wrap animate-on-scroll" data-delay="2">
                     <div class="browser-mockup">
                         <div class="browser-chrome">
-                            <div class="browser-dots">
-                                <span></span><span></span><span></span>
-                            </div>
+                            <div class="browser-dots"><span></span><span></span><span></span></div>
                             <div class="browser-url">yourstartup.com</div>
                         </div>
                         <div class="browser-body">
                             <div class="mini-nav">
                                 <span class="mini-logo">Startup<span>.</span></span>
-                                <div class="mini-nav-links">
-                                    <span></span><span></span><span></span>
-                                </div>
+                                <div class="mini-nav-links"><span></span><span></span><span></span></div>
                             </div>
                             <div class="mini-hero">
                                 <h4>Your product, beautifully presented</h4>
@@ -1553,21 +1568,9 @@
                                 <span class="mini-btn">Get Started</span>
                             </div>
                             <div class="mini-grid">
-                                <div class="mini-card">
-                                    <div class="mini-icon"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line" style="width:60%"></div>
-                                </div>
-                                <div class="mini-card">
-                                    <div class="mini-icon"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line" style="width:60%"></div>
-                                </div>
-                                <div class="mini-card">
-                                    <div class="mini-icon"></div>
-                                    <div class="mini-line"></div>
-                                    <div class="mini-line" style="width:60%"></div>
-                                </div>
+                                <div class="mini-card"><div class="mini-icon"></div><div class="mini-line"></div><div class="mini-line" style="width:60%"></div></div>
+                                <div class="mini-card"><div class="mini-icon"></div><div class="mini-line"></div><div class="mini-line" style="width:60%"></div></div>
+                                <div class="mini-card"><div class="mini-icon"></div><div class="mini-line"></div><div class="mini-line" style="width:60%"></div></div>
                             </div>
                         </div>
                     </div>
@@ -1575,66 +1578,33 @@
             </div>
         </section>
 
-        <!-- ============ SERVICES ============ -->
+        <!-- SERVICES -->
         <section class="services section-padding" id="services" aria-labelledby="services-heading">
             <div class="container">
                 <div class="text-center animate-on-scroll">
                     <span class="section-label">What We Provide</span>
                     <h2 class="section-heading" id="services-heading">Everything your startup needs to get online.</h2>
-                    <p class="section-subheading">
-                        Athar handles your website from design through launch — fast, affordable, and built
-                        with startup founders in mind.
-                    </p>
+                    <p class="section-subheading">Athar handles your website from design through launch — fast, affordable, and built with startup founders in mind.</p>
                 </div>
                 <div class="services-grid">
-                    <div class="service-card animate-on-scroll" data-delay="0">
-                        <div class="icon" aria-hidden="true">&#9670;</div>
-                        <h3>Landing Pages</h3>
-                        <p>High-converting single pages that communicate your value instantly.</p>
-                    </div>
-                    <div class="service-card animate-on-scroll" data-delay="1">
-                        <div class="icon" aria-hidden="true">&#9632;</div>
-                        <h3>Startup Websites</h3>
-                        <p>Complete websites that make your company look established and credible.</p>
-                    </div>
-                    <div class="service-card animate-on-scroll" data-delay="2">
-                        <div class="icon" aria-hidden="true">&#9650;</div>
-                        <h3>Product Pages</h3>
-                        <p>Dedicated pages that showcase what your product does and why it matters.</p>
-                    </div>
-                    <div class="service-card animate-on-scroll" data-delay="3">
-                        <div class="icon" aria-hidden="true">&#9679;</div>
-                        <h3>Waitlists</h3>
-                        <p>Simple, elegant signup pages that capture early interest and emails.</p>
-                    </div>
-                    <div class="service-card animate-on-scroll" data-delay="4">
-                        <div class="icon" aria-hidden="true">&#8364;</div>
-                        <h3>Pricing Pages</h3>
-                        <p>Clear, transparent pricing pages that convert visitors into customers.</p>
-                    </div>
-                    <div class="service-card animate-on-scroll" data-delay="5">
-                        <div class="icon" aria-hidden="true">&#9993;</div>
-                        <h3>Contact Forms</h3>
-                        <p>Simple, working forms that make it easy for people to reach you.</p>
-                    </div>
-                    <div class="service-card animate-on-scroll" data-delay="5">
-                        <div class="icon" aria-hidden="true">&#9654;</div>
-                        <h3>Deployment</h3>
-                        <p>We handle hosting, DNS, and everything to get your site live — fast.</p>
-                    </div>
+                    <div class="service-card animate-on-scroll" data-delay="0"><div class="icon">&#9670;</div><h3>Landing Pages</h3><p>High-converting single pages that communicate your value instantly.</p></div>
+                    <div class="service-card animate-on-scroll" data-delay="1"><div class="icon">&#9632;</div><h3>Startup Websites</h3><p>Complete websites that make your company look established and credible.</p></div>
+                    <div class="service-card animate-on-scroll" data-delay="2"><div class="icon">&#9650;</div><h3>Product Pages</h3><p>Dedicated pages that showcase what your product does and why it matters.</p></div>
+                    <div class="service-card animate-on-scroll" data-delay="3"><div class="icon">&#9679;</div><h3>Waitlists</h3><p>Simple, elegant signup pages that capture early interest and emails.</p></div>
+                    <div class="service-card animate-on-scroll" data-delay="4"><div class="icon">&#8364;</div><h3>Pricing Pages</h3><p>Clear, transparent pricing pages that convert visitors into customers.</p></div>
+                    <div class="service-card animate-on-scroll" data-delay="5"><div class="icon">&#9993;</div><h3>Contact Forms</h3><p>Simple, working forms that make it easy for people to reach you.</p></div>
+                    <div class="service-card animate-on-scroll" data-delay="5"><div class="icon">&#9654;</div><h3>Deployment</h3><p>We handle hosting, DNS, and everything to get your site live — fast.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ PRICING ============ -->
+        <!-- PRICING -->
         <section class="pricing section-padding-sm" id="pricing" aria-labelledby="pricing-heading">
             <div class="container">
                 <div class="text-center animate-on-scroll">
                     <span class="section-label">Pricing</span>
                     <h2 class="section-heading" id="pricing-heading">Simple, transparent pricing.</h2>
-                    <p class="section-subheading">
-                        No hourly rates. No hidden fees. Just a clear price for a professional website.
-                    </p>
+                    <p class="section-subheading">No hourly rates. No hidden fees. Just a clear price for a professional website.</p>
                 </div>
                 <div class="pricing-card animate-on-scroll" data-delay="1">
                     <div class="price-label">One-time setup</div>
@@ -1643,29 +1613,21 @@
                     <div class="price-divider"></div>
                     <div class="price-yearly">$150<span style="font-size:0.9rem;font-weight:500;color:var(--text-muted)">/year</span></div>
                     <div class="price-yearly-label">for hosting &amp; maintenance</div>
-                    <p class="price-note">
-                        The initial $450 covers creating and launching your website.
-                        The $150/year keeps it maintained, hosted, and allows continued work as your startup grows.
-                    </p>
+                    <p class="price-note">The initial $450 covers creating and launching your website. The $150/year keeps it maintained, hosted, and allows continued work as your startup grows.</p>
                     <span class="price-delivery">&#9201; Delivered in 7&ndash;14 days</span>
                 </div>
             </div>
         </section>
 
-        <!-- ============ FREE DEMO ============ -->
+        <!-- FREE DEMO -->
         <section class="free-demo section-padding" id="free-demo" aria-labelledby="demo-heading">
             <div class="container">
                 <div class="free-demo-inner animate-on-scroll">
                     <div class="demo-badge">&#9679; No Upfront Commitment</div>
                     <h2 id="demo-heading">See it before you buy it.</h2>
-                    <p>
-                        Get a completely free demo of your website before spending anything.
-                        If you like it, we'll continue working together and turn it into your finished website.
-                    </p>
+                    <p>Get a completely free demo of your website before spending anything. If you like it, we'll continue working together and turn it into your finished website.</p>
                     <a href="#get-demo" class="btn btn-primary btn-lg">Get My Free Demo</a>
-                    <p class="no-commitment">
-                        <strong>Zero cost.</strong> <strong>Zero commitment.</strong> Just see what your startup could look like.
-                    </p>
+                    <p class="no-commitment"><strong>Zero cost.</strong> <strong>Zero commitment.</strong> Just see what your startup could look like.</p>
                 </div>
             </div>
         </section>
@@ -1676,107 +1638,94 @@
                 <div class="text-center animate-on-scroll">
                     <span class="section-label">Portfolio</span>
                     <h2 class="section-heading" id="gallery-heading">See what your startup could look like.</h2>
-                    <p class="section-subheading">
-                        A selection of website concepts — each designed with early-stage startups in mind.
-                    </p>
+                    <p class="section-subheading">Explore our recent website concepts — click any project to view its full gallery.</p>
                 </div>
-                <div class="gallery-grid">
-                    <!-- Concept 1: Clean SaaS Landing -->
-                    <div class="gallery-item animate-on-scroll" data-delay="0" role="img" aria-label="Website concept: Clean SaaS landing page">
-                        <div class="gallery-chrome"><span></span><span></span><span></span></div>
-                        <div class="gallery-preview gp-light">
-                            <div class="gp-line" style="width:30%"></div>
-                            <div class="gp-line" style="width:70%;height:6px;background:#C0C0CC"></div>
-                            <div class="gp-line" style="width:55%"></div>
-                            <div class="gp-btn" style="margin-top:4px">Get Started</div>
-                            <div class="gp-row" style="margin-top:8px">
-                                <div class="gp-col"><div class="gp-block"></div></div>
-                                <div class="gp-col"><div class="gp-block"></div></div>
-                                <div class="gp-col"><div class="gp-block"></div></div>
+
+                <div class="project-grid">
+                    <!-- Project 1: AgroSmart -->
+                    <div class="project-card ph-agrosmart animate-on-scroll" data-project="agrosmart" role="button" tabindex="0" aria-label="View AgroSmart project gallery">
+                        <div class="project-header">
+                            <h3>AgroSmart</h3>
+                            <span class="project-view-hint">View Project &#8594;</span>
+                        </div>
+                        <div class="project-main-image" data-image-index="0">
+                            <img src="images/main-1.jpg" alt="AgroSmart website concept">
+                        </div>
+                        <div class="project-thumbnails">
+                            <div class="project-thumb" data-image-index="1" role="button" tabindex="0" aria-label="AgroSmart image 1">
+                                <img src="images/1-1.jpg" alt="AgroSmart concept 1">
                             </div>
-                            <span class="gallery-label">SaaS Landing</span>
+                            <div class="project-thumb" data-image-index="2" role="button" tabindex="0" aria-label="AgroSmart image 2">
+                                <img src="images/1-2.jpg" alt="AgroSmart concept 2">
+                            </div>
+                            <div class="project-thumb" data-image-index="3" role="button" tabindex="0" aria-label="AgroSmart image 3">
+                                <img src="images/1-3.jpg" alt="AgroSmart concept 3">
+                            </div>
+                            <div class="project-thumb" data-image-index="4" role="button" tabindex="0" aria-label="AgroSmart image 4">
+                                <img src="images/1-4.jpg" alt="AgroSmart concept 4">
+                            </div>
                         </div>
                     </div>
-                    <!-- Concept 2: Dark Tech -->
-                    <div class="gallery-item animate-on-scroll" data-delay="1" role="img" aria-label="Website concept: Dark tech product page">
-                        <div class="gallery-chrome"><span></span><span></span><span></span></div>
-                        <div class="gallery-preview gp-dark">
-                            <div class="gp-line accent" style="width:25%"></div>
-                            <div class="gp-line" style="width:65%;height:6px"></div>
-                            <div class="gp-line" style="width:45%"></div>
-                            <div class="gp-row" style="margin-top:8px">
-                                <div class="gp-col"><div class="gp-block" style="border-color:#3A3A4E"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="border-color:#3A3A4E"></div></div>
+
+                    <!-- Project 2: Castle Verifier -->
+                    <div class="project-card ph-castle animate-on-scroll" data-project="castle" role="button" tabindex="0" aria-label="View Castle Verifier project gallery">
+                        <div class="project-header">
+                            <h3>Castle Verifier</h3>
+                            <span class="project-view-hint">View Project &#8594;</span>
+                        </div>
+                        <div class="project-main-image" data-image-index="0">
+                            <img src="images/main-2.jpg" alt="Castle Verifier website concept">
+                        </div>
+                        <div class="project-thumbnails">
+                            <div class="project-thumb" data-image-index="1" role="button" tabindex="0" aria-label="Castle Verifier image 1">
+                            <img src="images/2-1.jpg" alt="Castle Verifier concept 1">
                             </div>
-                            <span class="gallery-label">Dark Tech</span>
+                            <div class="project-thumb" data-image-index="2" role="button" tabindex="0" aria-label="Castle Verifier image 2">
+                            <img src="images/2-2.jpg" alt="Castle Verifier concept 2">
+                            </div>
+                            <div class="project-thumb" data-image-index="3" role="button" tabindex="0" aria-label="Castle Verifier image 3">
+                                <img src="images/2-3.jpg" alt="Castle Verifier concept 3">
+                            </div>
+                            <div class="project-thumb" data-image-index="4" role="button" tabindex="0" aria-label="Castle Verifier image 4">
+                                <img src="images/2-4.jpg" alt="Castle Verifier concept 4">
+                            </div>
                         </div>
                     </div>
-                    <!-- Concept 3: Product Showcase -->
-                    <div class="gallery-item animate-on-scroll" data-delay="2" role="img" aria-label="Website concept: Product showcase page">
-                        <div class="gallery-chrome"><span></span><span></span><span></span></div>
-                        <div class="gallery-preview gp-product">
-                            <div class="gp-line" style="width:40%"></div>
-                            <div class="gp-row" style="margin-top:6px">
-                                <div class="gp-col"><div class="gp-block" style="min-height:32px"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:32px"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:32px"></div></div>
-                            </div>
-                            <div class="gp-line" style="width:50%;margin-top:4px"></div>
-                            <span class="gallery-label">Product</span>
+
+                    <!-- Project 3: Placeholder Name -->
+                    <div class="project-card ph-project3 animate-on-scroll" data-project="project3" role="button" tabindex="0" aria-label="View third project gallery">
+                        <div class="project-header">
+                            <h3>Project Three</h3>
+                            <span class="project-view-hint">View Project &#8594;</span>
                         </div>
-                    </div>
-                    <!-- Concept 4: Waitlist -->
-                    <div class="gallery-item animate-on-scroll" data-delay="3" role="img" aria-label="Website concept: Waitlist signup page">
-                        <div class="gallery-chrome"><span></span><span></span><span></span></div>
-                        <div class="gallery-preview gp-waitlist">
-                            <div class="gp-line" style="width:40%;height:6px;background:#4A5A6C"></div>
-                            <div class="gp-line" style="width:60%"></div>
-                            <div style="display:flex;gap:4px;margin-top:4px">
-                                <div class="gp-line" style="width:50%;height:8px;background:#2A3A4A;border-radius:4px"></div>
-                                <span class="gp-btn" style="font-size:0.45rem;padding:3px 8px">Join</span>
-                            </div>
-                            <span class="gallery-label">Waitlist</span>
+                        <div class="project-main-image" data-image-index="0">
+                            <!-- Replace with: <img src="images/main-3.jpg" alt="Third project website concept"> -->
+                            <div class="placeholder-img">main-3.jpg</div>
                         </div>
-                    </div>
-                    <!-- Concept 5: Pricing -->
-                    <div class="gallery-item animate-on-scroll" data-delay="4" role="img" aria-label="Website concept: Pricing page">
-                        <div class="gallery-chrome"><span></span><span></span><span></span></div>
-                        <div class="gallery-preview gp-pricing">
-                            <div class="gp-line" style="width:50%;height:5px"></div>
-                            <div class="gp-row" style="margin-top:6px">
-                                <div class="gp-col"><div class="gp-block" style="min-height:36px"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:36px;border-color:#FF5A3C"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:36px"></div></div>
+                        <div class="project-thumbnails">
+                            <div class="project-thumb" data-image-index="1" role="button" tabindex="0" aria-label="Third project image 1">
+                                <!-- Replace with: <img src="images/3-1.jpg" alt="Third project concept 1"> -->
+                                <div class="placeholder-img">3-1.jpg</div>
                             </div>
-                            <span class="gallery-label">Pricing</span>
-                        </div>
-                    </div>
-                    <!-- Concept 6: Portfolio -->
-                    <div class="gallery-item animate-on-scroll" data-delay="5" role="img" aria-label="Website concept: Portfolio grid page">
-                        <div class="gallery-chrome"><span></span><span></span><span></span></div>
-                        <div class="gallery-preview gp-portfolio">
-                            <div class="gp-line accent" style="width:35%"></div>
-                            <div class="gp-row" style="margin-top:6px">
-                                <div class="gp-col"><div class="gp-block" style="min-height:28px"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:28px"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:28px"></div></div>
+                            <div class="project-thumb" data-image-index="2" role="button" tabindex="0" aria-label="Third project image 2">
+                                <!-- Replace with: <img src="images/3-2.jpg" alt="Third project concept 2"> -->
+                                <div class="placeholder-img">3-2.jpg</div>
                             </div>
-                            <div class="gp-row">
-                                <div class="gp-col"><div class="gp-block" style="min-height:28px"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:28px"></div></div>
-                                <div class="gp-col"><div class="gp-block" style="min-height:28px"></div></div>
+                            <div class="project-thumb" data-image-index="3" role="button" tabindex="0" aria-label="Third project image 3">
+                                <!-- Replace with: <img src="images/3-3.jpg" alt="Third project concept 3"> -->
+                                <div class="placeholder-img">3-3.jpg</div>
                             </div>
-                            <span class="gallery-label">Portfolio</span>
+                            <div class="project-thumb" data-image-index="4" role="button" tabindex="0" aria-label="Third project image 4">
+                                <!-- Replace with: <img src="images/3-4.jpg" alt="Third project concept 4"> -->
+                                <div class="placeholder-img">3-4.jpg</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <p class="gallery-note">
-                    <span>Website Concepts</span> &mdash; designed to show what's possible for your startup.
-                </p>
             </div>
         </section>
 
-        <!-- ============ PROCESS ============ -->
+        <!-- PROCESS -->
         <section class="process section-padding" id="process" aria-labelledby="process-heading">
             <div class="container">
                 <div class="text-center animate-on-scroll">
@@ -1784,83 +1733,42 @@
                     <h2 class="section-heading" id="process-heading">Simple from start to launch.</h2>
                 </div>
                 <div class="process-timeline">
-                    <div class="process-step animate-on-scroll" data-delay="0">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h3>Tell us about your startup</h3>
-                            <p>You tell us about your company, product, audience, and what you need.</p>
-                        </div>
-                    </div>
-                    <div class="process-step animate-on-scroll" data-delay="1">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h3>We design a free demo</h3>
-                            <p>We create a website concept specifically for your startup — completely free.</p>
-                        </div>
-                    </div>
-                    <div class="process-step animate-on-scroll" data-delay="2">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h3>You review it</h3>
-                            <p>You look over the design and tell us what you think. No pressure.</p>
-                        </div>
-                    </div>
-                    <div class="process-step animate-on-scroll" data-delay="3">
-                        <div class="step-number">04</div>
-                        <div class="step-content">
-                            <h3>We build and launch</h3>
-                            <p>If you like the demo, we turn it into a production-ready website and launch it.</p>
-                        </div>
-                    </div>
-                    <div class="process-step animate-on-scroll" data-delay="4">
-                        <div class="step-number">05</div>
-                        <div class="step-content">
-                            <h3>You get the website</h3>
-                            <p>Your startup gets a professional website ready for customers, investors, and potential hires.</p>
-                        </div>
-                    </div>
+                    <div class="process-step animate-on-scroll" data-delay="0"><div class="step-number">01</div><div class="step-content"><h3>Tell us about your startup</h3><p>You tell us about your company, product, audience, and what you need.</p></div></div>
+                    <div class="process-step animate-on-scroll" data-delay="1"><div class="step-number">02</div><div class="step-content"><h3>We design a free demo</h3><p>We create a website concept specifically for your startup — completely free.</p></div></div>
+                    <div class="process-step animate-on-scroll" data-delay="2"><div class="step-number">03</div><div class="step-content"><h3>You review it</h3><p>You look over the design and tell us what you think. No pressure.</p></div></div>
+                    <div class="process-step animate-on-scroll" data-delay="3"><div class="step-number">04</div><div class="step-content"><h3>We build and launch</h3><p>If you like the demo, we turn it into a production-ready website and launch it.</p></div></div>
+                    <div class="process-step animate-on-scroll" data-delay="4"><div class="step-number">05</div><div class="step-content"><h3>You get the website</h3><p>Your startup gets a professional website ready for customers, investors, and potential hires.</p></div></div>
                 </div>
                 <p class="process-finale animate-on-scroll" data-delay="5">Simple<span>.</span></p>
             </div>
         </section>
 
-        <!-- ============ ABOUT ============ -->
+        <!-- ABOUT -->
         <section class="about section-padding-sm" id="about" aria-labelledby="about-heading">
             <div class="container">
                 <div class="about-inner animate-on-scroll">
                     <span class="section-label">About Athar</span>
                     <h2 class="section-heading" id="about-heading">Built to help early-stage companies.</h2>
-                    <p>
-                        We like helping early-stage companies establish a professional online presence
-                        without the cost and complexity of a traditional agency. You focus on building
-                        your product — we'll make sure the world sees it the right way.
-                    </p>
+                    <p>We like helping early-stage companies establish a professional online presence without the cost and complexity of a traditional agency. You focus on building your product — we'll make sure the world sees it the right way.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ============ FINAL CTA ============ -->
+        <!-- FINAL CTA -->
         <section class="final-cta section-padding" id="get-demo" aria-labelledby="cta-heading">
             <div class="container">
                 <div class="final-cta-inner animate-on-scroll">
                     <h2 id="cta-heading">Let's build your startup's first impression.</h2>
-                    <p>
-                        Tell us about your startup and we'll create a free website demo for you.
-                        No cost. No commitment. Just see what's possible.
-                    </p>
-                    <a href="mailto:hello@athar.studio?subject=Free%20Website%20Demo%20for%20My%20Startup&body=Hi%20Athar%2C%0A%0AI'd%20like%20to%20get%20a%20free%20website%20demo%20for%20my%20startup.%0A%0AStartup%20name%3A%20%0AWhat%20we%20do%3A%20%0AWebsite%20goal%3A%20%0A%0AThanks!" class="btn btn-primary btn-lg">
-                        Get Your Free Demo
-                    </a>
-                    <p class="cta-note">
-                        <strong>Completely free.</strong> You only pay if you decide to move forward.
-                    </p>
+                    <p>Tell us about your startup and we'll create a free website demo for you. No cost. No commitment. Just see what's possible.</p>
+                    <a href="mailto:hello@athar.studio?subject=Free%20Website%20Demo%20for%20My%20Startup&body=Hi%20Athar%2C%0A%0AI'd%20like%20to%20get%20a%20free%20website%20demo%20for%20my%20startup.%0A%0AStartup%20name%3A%20%0AWhat%20we%20do%3A%20%0AWebsite%20goal%3A%20%0A%0AThanks!" class="btn btn-primary btn-lg">Get Your Free Demo</a>
+                    <p class="cta-note"><strong>Completely free.</strong> You only pay if you decide to move forward.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- ============ FOOTER ============ -->
+    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-inner">
             <span class="footer-logo">Athar<span>.</span></span>
@@ -1875,22 +1783,35 @@
         </div>
     </footer>
 
-    <!-- ============ JAVASCRIPT ============ -->
+    <!-- ============ LIGHTBOX ============ -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project gallery lightbox">
+        <div class="lightbox-overlay" id="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Close gallery">&times;</button>
+            <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+            <div class="lightbox-image-wrap">
+                <div class="lightbox-image-placeholder" id="lightbox-image-display">image</div>
+            </div>
+            <button class="lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
+            <div class="lightbox-counter" id="lightbox-counter">1 / 5</div>
+        </div>
+    </div>
+
     <script>
         (function() {
             'use strict';
 
-            // --- Mobile hamburger menu ---
+            // ---- Mobile menu ----
             const hamburger = document.getElementById('hamburger');
             const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
 
             function toggleMenu() {
-                const isOpen = mobileMenu.classList.contains('open');
-                hamburger.classList.toggle('active', !isOpen);
-                hamburger.setAttribute('aria-expanded', !isOpen);
-                mobileMenu.classList.toggle('open', !isOpen);
-                document.body.style.overflow = isOpen ? '' : 'hidden';
+                const open = mobileMenu.classList.contains('open');
+                hamburger.classList.toggle('active', !open);
+                hamburger.setAttribute('aria-expanded', !open);
+                mobileMenu.classList.toggle('open', !open);
+                document.body.style.overflow = open ? '' : 'hidden';
             }
 
             function closeMenu() {
@@ -1899,109 +1820,231 @@
                 mobileMenu.classList.remove('open');
                 document.body.style.overflow = '';
             }
-
             hamburger.addEventListener('click', toggleMenu);
-            mobileMenuLinks.forEach(function(link) {
-                link.addEventListener('click', closeMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+            });
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && mobileMenu.classList.contains('open')) closeMenu();
             });
 
-            // Close mobile menu on Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-                    closeMenu();
-                }
-            });
-
-            // Close mobile menu if window is resized to desktop
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768 && mobileMenu.classList.contains('open')) {
-                    closeMenu();
-                }
-            });
-
-            // --- Navigation scroll state ---
+            // ---- Nav scroll state ----
             const siteNav = document.getElementById('site-nav');
-            let navScrolled = false;
+            let scrolled = false;
 
-            function updateNavState() {
-                const scrolled = window.scrollY > 10;
-                if (scrolled !== navScrolled) {
-                    navScrolled = scrolled;
-                    siteNav.classList.toggle('scrolled', navScrolled);
+            function updateNav() {
+                const s = window.scrollY > 10;
+                if (s !== scrolled) {
+                    scrolled = s;
+                    siteNav.classList.toggle('scrolled', scrolled);
                 }
             }
-            window.addEventListener('scroll', updateNavState, { passive: true });
-            updateNavState();
+            window.addEventListener('scroll', updateNav, { passive: true });
+            updateNav();
 
-            // --- Intersection Observer for scroll animations ---
-            const animatedElements = document.querySelectorAll('.animate-on-scroll');
-
+            // ---- Scroll animations ----
+            const animatedEls = document.querySelectorAll('.animate-on-scroll');
             if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
+                const obs = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('visible');
-                            observer.unobserve(entry.target);
+                            obs.unobserve(entry.target);
                         }
                     });
-                }, {
-                    root: null,
-                    rootMargin: '0px 0px -60px 0px',
-                    threshold: 0.08
-                });
-
-                animatedElements.forEach(function(el) {
-                    observer.observe(el);
-                });
+                }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+                animatedEls.forEach(el => obs.observe(el));
             } else {
-                // Fallback: show all elements
-                animatedElements.forEach(function(el) {
-                    el.classList.add('visible');
-                });
+                animatedEls.forEach(el => el.classList.add('visible'));
             }
 
-            // --- Smooth anchor scrolling with offset for fixed nav ---
-            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            // ---- Smooth anchor scrolling ----
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
                     const targetEl = document.querySelector(targetId);
                     if (targetEl) {
                         e.preventDefault();
-                        const navHeight = document.getElementById('site-nav').offsetHeight;
-                        const targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight -
-                            8;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                        // Close mobile menu if open
-                        if (mobileMenu.classList.contains('open')) {
-                            closeMenu();
-                        }
+                        const navHeight = siteNav.offsetHeight;
+                        const pos = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
+                        window.scrollTo({ top: pos, behavior: 'smooth' });
+                        if (mobileMenu.classList.contains('open')) closeMenu();
                     }
                 });
             });
 
-            // --- Update active nav link on scroll (optional enhancement) ---
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
+            // ---- Lightbox ----
+            const lightbox = document.getElementById('lightbox');
+            const lightboxOverlay = document.getElementById('lightbox-overlay');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            const lightboxCounter = document.getElementById('lightbox-counter');
+            const lightboxImageDisplay = document.getElementById('lightbox-image-display');
 
-            function updateActiveLink() {
-                const scrollPos = window.scrollY + 120;
-                let currentSection = null;
-                sections.forEach(function(section) {
-                    if (section.offsetTop <= scrollPos) {
-                        currentSection = section.id;
+            // Define project data
+            const projects = {
+                agrosmart: {
+                    name: 'AgroSmart',
+                    images: [
+                        { label: 'main-1.jpg', desc: 'AgroSmart — Main Concept' },
+                        { label: '1-1.jpg', desc: 'AgroSmart — Detail 1' },
+                        { label: '1-2.jpg', desc: 'AgroSmart — Detail 2' },
+                        { label: '1-3.jpg', desc: 'AgroSmart — Detail 3' },
+                        { label: '1-4.jpg', desc: 'AgroSmart — Detail 4' }
+                    ],
+                    gradient: 'linear-gradient(135deg, #1A2E1A 0%, #2D4A2D 50%, #1F3B1F 100%)',
+                    textColor: '#7BA07B'
+                },
+                castle: {
+                    name: 'Castle Verifier',
+                    images: [
+                        { label: 'main-2.jpg', desc: 'Castle Verifier — Main Concept' },
+                        { label: '2-1.jpg', desc: 'Castle Verifier — Detail 1' },
+                        { label: '2-2.jpg', desc: 'Castle Verifier — Detail 2' },
+                        { label: '2-3.jpg', desc: 'Castle Verifier — Detail 3' },
+                        { label: '2-4.jpg', desc: 'Castle Verifier — Detail 4' }
+                    ],
+                    gradient: 'linear-gradient(135deg, #1A1A2E 0%, #2D2D4A 50%, #1F1F3B 100%)',
+                    textColor: '#7B7BA0'
+                },
+                project3: {
+                    name: 'Project Three',
+                    images: [
+                        { label: 'main-3.jpg', desc: 'Project Three — Main Concept' },
+                        { label: '3-1.jpg', desc: 'Project Three — Detail 1' },
+                        { label: '3-2.jpg', desc: 'Project Three — Detail 2' },
+                        { label: '3-3.jpg', desc: 'Project Three — Detail 3' },
+                        { label: '3-4.jpg', desc: 'Project Three — Detail 4' }
+                    ],
+                    gradient: 'linear-gradient(135deg, #2E1A1A 0%, #4A2D2D 50%, #3B1F1F 100%)',
+                    textColor: '#A07B7B'
+                }
+            };
+
+            let currentProject = null;
+            let currentIndex = 0;
+            let totalImages = 0;
+
+            function openLightbox(projectKey, startIndex) {
+                const project = projects[projectKey];
+                if (!project) return;
+                currentProject = projectKey;
+                totalImages = project.images.length;
+                currentIndex = Math.max(0, Math.min(startIndex || 0, totalImages - 1));
+                updateLightboxImage();
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+                currentProject = null;
+            }
+
+            function updateLightboxImage() {
+                const project = projects[currentProject];
+                if (!project) return;
+                const imgData = project.images[currentIndex];
+                lightboxImageDisplay.textContent = imgData.label;
+                lightboxImageDisplay.style.background = project.gradient;
+                lightboxImageDisplay.style.color = project.textColor;
+                lightboxCounter.textContent = (currentIndex + 1) + ' / ' + totalImages;
+                lightboxImageDisplay.setAttribute('aria-label', imgData.desc);
+            }
+
+            function goPrev() {
+                if (!currentProject) return;
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                updateLightboxImage();
+            }
+
+            function goNext() {
+                if (!currentProject) return;
+                currentIndex = (currentIndex + 1) % totalImages;
+                updateLightboxImage();
+            }
+
+            // Event listeners for lightbox
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxOverlay.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', goPrev);
+            lightboxNext.addEventListener('click', goNext);
+
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') goPrev();
+                if (e.key === 'ArrowRight') goNext();
+            });
+
+            // Touch/swipe support for lightbox
+            let touchStartX = null;
+            lightbox.addEventListener('touchstart', function(e) {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+            lightbox.addEventListener('touchend', function(e) {
+                if (touchStartX === null) return;
+                const diff = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) goPrev();
+                    else goNext();
+                }
+                touchStartX = null;
+            }, { passive: true });
+
+            // Click handlers on project cards
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                const projectKey = card.getAttribute('data-project');
+                // Click on main image or card header opens at index 0
+                const mainImage = card.querySelector('.project-main-image');
+                const header = card.querySelector('.project-header');
+                const thumbs = card.querySelectorAll('.project-thumb');
+
+                function openAtIndex(idx) {
+                    openLightbox(projectKey, idx);
+                }
+                if (mainImage) mainImage.addEventListener('click', function(e) { e.stopPropagation();
+                    openAtIndex(0); });
+                if (header) header.addEventListener('click', function(e) { e.stopPropagation();
+                    openAtIndex(0); });
+                thumbs.forEach((thumb, i) => {
+                    thumb.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        openAtIndex(i + 1);
+                    });
+                });
+                // Keyboard on card
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openAtIndex(0);
                     }
                 });
-                navLinks.forEach(function(link) {
+                thumbs.forEach((thumb, i) => {
+                    thumb.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openAtIndex(i + 1);
+                        }
+                    });
+                });
+            });
+
+            // ---- Active nav link ----
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            function updateActiveLink() {
+                const pos = window.scrollY + 120;
+                let current = null;
+                sections.forEach(sec => { if (sec.offsetTop <= pos) current = sec.id; });
+                navLinks.forEach(link => {
                     const href = link.getAttribute('href').replace('#', '');
-                    if (href === currentSection) {
-                        link.style.color = 'var(--text-primary)';
-                    } else {
-                        link.style.color = '';
-                    }
+                    link.style.color = href === current ? 'var(--text-primary)' : '';
                 });
             }
             window.addEventListener('scroll', updateActiveLink, { passive: true });
